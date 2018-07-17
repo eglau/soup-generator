@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import soup from './soup';
+import ingredients from './ingredients';
+import portion from './portion';
 
 export default combineReducers({
-  soup
+  ingredients,
+  portion
 });

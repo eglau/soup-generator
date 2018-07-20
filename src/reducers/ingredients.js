@@ -13,15 +13,18 @@ const ingredients = (state = DEFAULT_STATE, action) => {
       if (!_.contains(newState.spices, action.spice)) {
         newState.spices.push(action.spice);
       }
+      return newState;
     case 'ADD_VEGETABLE':
-    if (!_.contains(newState.vegetables, action.vegetable)) {
-      newState.vegetables.push(action.vegetable);
-    }
+      if (!_.contains(newState.vegetables, action.vegetable)) {
+        newState.vegetables.push(action.vegetable);
+      }
+      return newState;
     case 'SET_PROTEIN':
-      let newState = Object.assign({}, state);
       newState.protein = action.protein;
+      return newState;
+    default:
+      return state;
   }
-  return newState;
 };
 
 export default ingredients;

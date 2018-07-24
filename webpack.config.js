@@ -21,10 +21,14 @@ module.exports = (env, argv) => ({
           }
         ]
       },
-      /*{
+      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
-      }*/
+        //use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [
+          argv.mode !== 'production' ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
+      },
       {
         test: /\.(sass|scss)$/,
         use: [
@@ -32,6 +36,10 @@ module.exports = (env, argv) => ({
           "css-loader",
           "sass-loader"
         ]
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   },

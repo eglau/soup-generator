@@ -1,19 +1,19 @@
-const addSpice = (spice) => ({
+const addSpice = id => ({
   type: 'ADD_SPICE',
-  spice
+  id
 });
 
-const addVegetable = (vegetable) => ({
+const addVegetable = id => ({
   type: 'ADD_VEGETABLE',
-  vegetable
+  id
 });
 
-const setProtein = (protein) => ({
+const setProtein = id => ({
   type: 'SET_PROTEIN',
-  protein
+  id
 });
 
-const setPortionSize = (size) => ({
+const setPortionSize = size => ({
   type: 'SET_PORTION_SIZE',
   size
 });

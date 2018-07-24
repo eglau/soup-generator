@@ -1,3 +1,5 @@
+'use strict';
+
 const DEFAULT_STATE = {
   spices: [],
   vegetables: [],

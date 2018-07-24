@@ -1,3 +1,5 @@
+'use strict';
+
 const addSpice = id => ({
   type: 'ADD_SPICE',
   id

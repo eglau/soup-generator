@@ -1,3 +1,5 @@
+'use strict';
+
 import portion from './portion';
 
 describe('portion reducer', () => {

@@ -1,7 +1,22 @@
 @import 'reset';
 
-$grey: #eeeeee;
+$darkgrey: #888888;
 
 #root {
-  background-color: $grey;
+  background-color: white;
+  header {
+    text-align: center;
+    background-color: lightskyblue;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  footer {
+    text-align: center;
+    color: $darkgrey;
+    padding: 1em;
+  }
+}
+
+label {
+  margin-left: 0.5em;
 }

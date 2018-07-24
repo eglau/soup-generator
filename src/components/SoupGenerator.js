@@ -4,6 +4,8 @@ import React from 'react';
 
 import JsonDisplayContainer from '../containers/JsonDisplayContainer';
 
+import '../css/style.scss';
+
 const SPICES = [
   { id: 1, name: 'Oregano' },
   { id: 2, name: 'Cinnamon' },
@@ -34,13 +36,19 @@ const PORTIONS = [
 const SoupGenerator = () => {
   return (
     <div id="soupgenerator">
+      <header>
+        <h1>Soup Generator</h1>
+      </header>
       <div id="ingredients-selector" className="ui grid">
         <CheckboxList title='Spices' items={SPICES} inputName='spice' />
         <CheckboxList title='Vegetables' items={VEGETABLES} inputName='vegetable' />
-        <RadioList title='Protein' items={PROTEINS} inputName="protein" />
-        <RadioList title='Portion Size' items={PORTIONS} inputName="portion" />
+        <RadioList title='Protein' items={PROTEINS} inputName="protein" default={1} />
+        <RadioList title='Portion Size' items={PORTIONS} inputName="portion" default={2} />
       </div>
       <JsonDisplayContainer />
+      <footer>
+        <p>Made with love by eglau</p>
+      </footer>
     </div>
   );
 };
@@ -69,11 +77,11 @@ const RadioList = (props) => {
     <div className="four wide column">
       <h2>{props.title}</h2>
       {
-        props.items.map((item, index) => {
+        props.items.map(item => {
           const elemID = `${props.inputName}-${item.id}`;
           return (
             <div key={elemID}>
-              <input id={elemID} type="radio" name={props.inputName} value={item.id} checked={index === 0}/>
+              <input id={elemID} type="radio" name={props.inputName} value={item.id} checked={item.id === props.default}/>
               <label htmlFor={elemID}>{item.name}</label>
             </div>
           )

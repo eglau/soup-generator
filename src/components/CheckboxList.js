@@ -11,7 +11,7 @@ const CheckboxList = (props) => {
           const elemID = `${props.inputName}-${item.id}`;
           return (
             <div key={elemID}>
-              <input id={elemID} type="checkbox" name={props.inputName} value={item.id} />
+              <input id={elemID} type="checkbox" name={props.inputName} value={item.id} onClick={props.onClick} />
               <label htmlFor={elemID}>{item.name}</label>
             </div>
           )

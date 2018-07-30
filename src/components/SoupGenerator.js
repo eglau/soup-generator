@@ -3,8 +3,7 @@
 import React from 'react';
 
 import JsonDisplayContainer from '../containers/JsonDisplayContainer';
-//import CheckboxListContainer from '../containers/CheckboxListContainer';
-import CheckboxList from './CheckboxList';
+import CheckboxListContainer from '../containers/CheckboxListContainer';
 import RadioListContainer from '../containers/RadioListContainer';
 
 import '../css/style.scss';
@@ -43,8 +42,8 @@ const SoupGenerator = () => {
         <h1>Soup Generator</h1>
       </header>
       <div id="ingredients-selector" className="ui grid">
-        <CheckboxList title='Spices' items={SPICES} inputName='spice' />
-        <CheckboxList title='Vegetables' items={VEGETABLES} inputName='vegetable' />
+        <CheckboxListContainer title='Spices' items={SPICES} inputName='spice' />
+        <CheckboxListContainer title='Vegetables' items={VEGETABLES} inputName='vegetable' />
         <RadioListContainer title='Protein' items={PROTEINS} inputName="protein" checked={1} />
         <RadioListContainer title='Portion Size' items={PORTIONS} inputName="portion" checked={2} />
       </div>

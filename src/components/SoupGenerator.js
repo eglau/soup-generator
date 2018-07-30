@@ -3,6 +3,9 @@
 import React from 'react';
 
 import JsonDisplayContainer from '../containers/JsonDisplayContainer';
+//import CheckboxListContainer from '../containers/CheckboxListContainer';
+import CheckboxList from './CheckboxList';
+import RadioListContainer from '../containers/RadioListContainer';
 
 import '../css/style.scss';
 
@@ -42,8 +45,8 @@ const SoupGenerator = () => {
       <div id="ingredients-selector" className="ui grid">
         <CheckboxList title='Spices' items={SPICES} inputName='spice' />
         <CheckboxList title='Vegetables' items={VEGETABLES} inputName='vegetable' />
-        <RadioList title='Protein' items={PROTEINS} inputName="protein" default={1} />
-        <RadioList title='Portion Size' items={PORTIONS} inputName="portion" default={2} />
+        <RadioListContainer title='Protein' items={PROTEINS} inputName="protein" checked={1} />
+        <RadioListContainer title='Portion Size' items={PORTIONS} inputName="portion" checked={2} />
       </div>
       <JsonDisplayContainer />
       <footer>
@@ -52,43 +55,5 @@ const SoupGenerator = () => {
     </div>
   );
 };
-
-const CheckboxList = (props) => {
-  return (
-    <div className="four wide column">
-      <h2>{props.title}</h2>
-      {
-        props.items.map(item => {
-          let elemID = `${props.inputName}-${item.id}`;
-          return (
-            <div key={elemID}>
-              <input id={elemID} type="checkbox" name={props.inputName} value={item.id} />
-              <label htmlFor={elemID}>{item.name}</label>
-            </div>
-          )
-        })
-      }
-    </div>
-  );
-}
-
-const RadioList = (props) => {
-  return (
-    <div className="four wide column">
-      <h2>{props.title}</h2>
-      {
-        props.items.map(item => {
-          const elemID = `${props.inputName}-${item.id}`;
-          return (
-            <div key={elemID}>
-              <input id={elemID} type="radio" name={props.inputName} value={item.id} checked={item.id === props.default}/>
-              <label htmlFor={elemID}>{item.name}</label>
-            </div>
-          )
-        })
-      }
-    </div>
-  );
-}
 
 export default SoupGenerator;

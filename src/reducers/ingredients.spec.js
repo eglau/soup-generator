@@ -7,7 +7,7 @@ describe('ingredients reducer', () => {
     expect(ingredients(undefined, {})).toEqual({
       spices: [],
       vegetables: [],
-      protein: 0
+      protein: 1
     });
   });
 

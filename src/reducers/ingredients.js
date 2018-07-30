@@ -3,7 +3,7 @@
 const DEFAULT_STATE = {
   spices: [],
   vegetables: [],
-  protein: 0
+  protein: 1
 };
 
 const _ = require('underscore');

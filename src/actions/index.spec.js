@@ -11,10 +11,28 @@ describe('addSpice action', () => {
   });
 });
 
+describe('removeSpice action', () => {
+  it('should create REMOVE_SPICE action', () => {
+    expect(actions.removeSpice(1)).toEqual({
+      type: 'REMOVE_SPICE',
+      id: 1
+    });
+  });
+});
+
 describe('addVegetable action', () => {
   it('should create ADD_VEGETABLE action', () => {
     expect(actions.addVegetable(2)).toEqual({
       type: 'ADD_VEGETABLE',
+      id: 2
+    })
+  });
+});
+
+describe('removeVegetable action', () => {
+  it('should create REMOVE_VEGETABLE action', () => {
+    expect(actions.removeVegetable(2)).toEqual({
+      type: 'REMOVE_VEGETABLE',
       id: 2
     })
   });

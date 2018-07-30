@@ -27,6 +27,21 @@ describe('ingredients reducer', () => {
       expect(ingredients(testState, { type: 'ADD_SPICE', id: 1 })).toEqual(testState);
     });
   });
+  describe('should handle REMOVE_SPICE action', () => {
+    let testState;
+    beforeEach(() => {
+      testState = {
+        spices: [1, 2, 3]
+      };
+    });
+
+    it('when the target spice is not in the state', () => {
+      expect(ingredients(testState, { type: 'REMOVE_SPICE', id: 4 }).spices).toEqual([1, 2, 3]);
+    });
+    it('when the target spice is already in the state', () => {
+      expect(ingredients(testState, { type: 'REMOVE_SPICE', id: 1 }).spices).toEqual([2, 3]);
+    });
+  });
 
   // Test vegetables
   describe('should handle ADD_VEGETABLE action', () => {
@@ -42,6 +57,21 @@ describe('ingredients reducer', () => {
     });
     it('when the target vegetable is already in the state', () => {
       expect(ingredients(testState, { type: 'ADD_VEGETABLE', id: 4 })).toEqual(testState);
+    });
+  });
+  describe('should handle REMOVE_VEGETABLE action', () => {
+    let testState;
+    beforeEach(() => {
+      testState = {
+        vegetables: [4, 5, 6]
+      };
+    });
+    
+    it('when the target vegetable is not in the state', () => {
+      expect(ingredients(testState, { type: 'REMOVE_VEGETABLE', id: 3 }).vegetables).toEqual([4, 5, 6]);
+    });
+    it('when the target vegetable is already in the state', () => {
+      expect(ingredients(testState, { type: 'REMOVE_VEGETABLE', id: 5 }).vegetables).toEqual([4, 6]);
     });
   });
 

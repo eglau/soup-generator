@@ -20,3 +20,17 @@ $darkgrey: #888888;
 label {
   margin-left: 0.5em;
 }
+
+.center {
+  text-align: center;
+}
+
+.itemList {
+  .itemListHeader {
+    background-color: lightgoldenrodyellow;
+    padding: 1rem 0;
+  }
+  .ingredientList {
+    padding: 0 1rem;
+  }
+}

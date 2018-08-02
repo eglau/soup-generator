@@ -21,7 +21,14 @@ const VEGETABLES = [
   { id: 2, name: 'Celery' },
   { id: 3, name: 'Onion' },
   { id: 4, name: 'Potato' },
-  { id: 5, name: 'Tomato' }
+  { id: 5, name: 'Tomato' },
+  { id: 6, name: 'Eggplant' },
+  { id: 7, name: 'Cabbage' },
+  { id: 8, name: 'Broccoli' },
+  { id: 9, name: 'Zucchini' },
+  { id: 10, name: 'Squash' },
+  { id: 11, name: 'Beans' },
+  { id: 12, name: 'Cauliflower' }
 ];
 const PROTEINS = [
   { id: 1, name: 'Tofu' },
@@ -36,6 +43,8 @@ const PORTIONS = [
   { id: 3, name: 'Large' }
 ]
 
+import { Button } from 'semantic-ui-react';
+
 const SoupGenerator = () => {
   return (
     <div id="soupgenerator">
@@ -48,7 +57,13 @@ const SoupGenerator = () => {
         <RadioListContainer title='Protein' items={PROTEINS} inputName="protein" checked={1} />
         <RadioListContainer title='Portion Size' items={PORTIONS} inputName="portion" checked={2} />
       </div>
-      <ClearButtonContainer />
+      <div id="actions" className="ui padded">
+        <ClearButtonContainer />
+        <div className="ui action input">
+          <input type="text" placeholder="Name your soup" />
+          <Button content="Save" />
+        </div>
+      </div>
       <JsonDisplayContainer />
       <footer>
         <p>Made with love by eglau</p>

@@ -1,11 +1,12 @@
 'use strict';
 
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 
 const ClearButton = (props) => {
   return (
     <div id="button-panel">
-      <button onClick={props.onClick}>Clear Ingredients</button>
+      <Button onClick={props.onClick} content='Clear Ingredients' />
     </div>
   );
 };

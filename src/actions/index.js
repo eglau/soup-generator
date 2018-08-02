@@ -30,6 +30,9 @@ const setPortionSize = size => ({
   size
 });
 
+const clearIngredients = () => ({
+  type: 'CLEAR_INGREDIENTS'
+});
 
 export {
   addSpice,
@@ -37,5 +40,6 @@ export {
   addVegetable,
   removeVegetable,
   setProtein,
-  setPortionSize
+  setPortionSize,
+  clearIngredients
 }

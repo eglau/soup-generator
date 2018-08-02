@@ -81,4 +81,14 @@ describe('ingredients reducer', () => {
     let payload = { type: 'SET_PROTEIN', id: 2 };
     expect(ingredients(testState, payload).protein).toBe(2);
   });
+
+  it('should handle CLEAR_INGREDIENTS action', () => {
+    let testState = { spices: [1, 2], vegetables: [3, 4], protein: 5 };
+    let payload = { type: 'CLEAR_INGREDIENTS' };
+    expect(ingredients(testState, payload)).toEqual({
+      spices: [],
+      vegetables: [],
+      protein: 1
+    });
+  });
 });

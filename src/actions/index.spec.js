@@ -25,7 +25,7 @@ describe('addVegetable action', () => {
     expect(actions.addVegetable(2)).toEqual({
       type: 'ADD_VEGETABLE',
       id: 2
-    })
+    });
   });
 });
 
@@ -34,7 +34,7 @@ describe('removeVegetable action', () => {
     expect(actions.removeVegetable(2)).toEqual({
       type: 'REMOVE_VEGETABLE',
       id: 2
-    })
+    });
   });
 });
 
@@ -43,7 +43,7 @@ describe('setProtein action', () => {
     expect(actions.setProtein(3)).toEqual({
       type: 'SET_PROTEIN',
       id: 3
-    })
+    });
   });
 });
 
@@ -52,6 +52,14 @@ describe('setPortionSize action', () => {
     expect(actions.setPortionSize(3)).toEqual({
       type: 'SET_PORTION_SIZE',
       size: 3
-    })
+    });
+  });
+});
+
+describe('clearIngredients action', () => {
+  it('should create CLEAR_INGREDIENTS action', () => {
+    expect(actions.clearIngredients()).toEqual({
+      type: 'CLEAR_INGREDIENTS'
+    });
   });
 });

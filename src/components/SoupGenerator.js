@@ -5,6 +5,7 @@ import React from 'react';
 import JsonDisplayContainer from '../containers/JsonDisplayContainer';
 import CheckboxListContainer from '../containers/CheckboxListContainer';
 import RadioListContainer from '../containers/RadioListContainer';
+import ClearButtonContainer from '../containers/ClearButtonContainer';
 
 import '../css/style.scss';
 
@@ -41,12 +42,13 @@ const SoupGenerator = () => {
       <header>
         <h1>Soup Generator</h1>
       </header>
-      <div id="ingredients-selector" className="ui grid">
+      <div id="ingredients-selector" className="ui grid padded">
         <CheckboxListContainer title='Spices' items={SPICES} inputName='spice' />
         <CheckboxListContainer title='Vegetables' items={VEGETABLES} inputName='vegetable' />
         <RadioListContainer title='Protein' items={PROTEINS} inputName="protein" checked={1} />
         <RadioListContainer title='Portion Size' items={PORTIONS} inputName="portion" checked={2} />
       </div>
+      <ClearButtonContainer />
       <JsonDisplayContainer />
       <footer>
         <p>Made with love by eglau</p>
